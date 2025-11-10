@@ -1,0 +1,105 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.intersection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.traffic-lamp {
+  background: #111;
+  padding: 15px;
+  border-radius: 10px;
+  width: 120px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.light {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 8px auto;
+  opacity: 0.3;
+}
+
+.light.red.on { background: red; opacity: 1; }
+.light.yellow.on { background: yellow; opacity: 1; }
+.light.green.on { background: #00cc00; opacity: 1; }
+
+.timer {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  margin: 5px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+#startBtn { background-color: #3498db; }
+#stopBtn { background-color: #e74c3c; }
+#pedBtn { background-color: #27ae60; }
+
+.info {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Road */
+.road {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 250px;
+  background: #444;
+  margin: 40px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.car {
+  width: 50px;
+  height: 25px;
+  background: #f1c40f;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.north-car { top: 230px; left: 48%; }
+.south-car { top: -30px; left: 52%; }
+.east-car { left: -60px; top: 110px; }
+.west-car { right: -60px; top: 110px; }
+
+.move-north { animation: moveNorth 3s linear forwards; }
+.move-south { animation: moveSouth 3s linear forwards; }
+.move-east { animation: moveEast 3s linear forwards; }
+.move-west { animation: moveWest 3s linear forwards; }
+
+@keyframes moveNorth { from { top: 230px; } to { top: -30px; } }
+@keyframes moveSouth { from { top: -30px; } to { top: 230px; } }
+@keyframes moveEast { from { left: -60px; } to { left: 100%; } }
+@keyframes moveWest { from { right: -60px; } to { right: 100%; } }
